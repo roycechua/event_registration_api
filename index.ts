@@ -1,7 +1,12 @@
 import express from "express";
+import { AppDataSource } from "./database/data-source";
 import eventsRoutes from "./routes/eventsRoutes";
 
 const app = express();
+
+AppDataSource.initialize()
+.then(() => {})
+.catch((error) => console.log(error))
 
 /* 
 middleware

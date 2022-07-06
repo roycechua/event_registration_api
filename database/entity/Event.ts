@@ -2,6 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
 @Entity()
 export class Event {
+    [x: string]: any
     @PrimaryGeneratedColumn() // PrimaryGeneratedColumn === AUTO_INCREMENT
     id: number
 

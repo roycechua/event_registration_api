@@ -85,7 +85,10 @@ app.put("/events", (req, res) => {
 });
 
 app.delete("/events/:id", (req, res) => {
-    events
-})
+    const params = req.params;
+    const id = params.id;
+    events = events.filter((event) => id !== event.id); 
+    res.status(200).send({message: "Event successfully deleted"});
+});
 
 app.listen(3000)
